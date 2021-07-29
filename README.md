@@ -1,6 +1,6 @@
 # HyperFuze Project
 
-![Image of Yaktocat](https://github.com/UnderZer0z/HyperFuze/blob/master/public/image/logo.png)
+![HyperFuze Logo](https://github.com/UnderZer0z/HyperFuze/blob/master/public/image/logo.png)
 
 ## what is HyperFuze?
 HyperFuze is an open israeli gaming server's browser/index.
@@ -18,8 +18,8 @@ helping israeli server owners connect with israeli players!
 
 
 ## DOTO LIST:
--[] forntend-side 
--[] discord bot
--[] discord server
--[] raspberry pi
+    -[] forntend-side 
+    -[] discord bot
+    -[] discord server
+    -[] raspberry pi
 
