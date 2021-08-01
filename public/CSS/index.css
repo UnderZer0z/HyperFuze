@@ -18,3 +18,30 @@
     margin: 0px;
     font-size: 18px;
 }
+
+
+/* server list compnent */
+
+#serv-list {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+table{
+    background-color: aliceblue;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+th{
+    font-size: 20px;
+    margin: 0px 10px;
+}
+
+td{
+    text-align: center;
+    padding: 0 20;
+}

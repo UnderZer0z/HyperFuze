@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/public/CSS/main.css">
   <link rel="stylesheet" href="/public/CSS/header.css">
   <link rel="stylesheet" href="/public/CSS/index.css">
+  <link rel="shortcut icon" href="/public/image/thunder.png" type="image/x-icon">
 </head>
 <body>
 
@@ -17,18 +18,18 @@
       Hyper<b>Fuze</b>
     </h1>
 
-    <nav>
+    <nav dir="rtl">
 
-      <a href="/">
-        שרתי משחק
+      <a class="tab" href="/">
+        🎮 שרתי משחק 
       </a>
 
-      <a href="/server">
-        שרתי דיסקורד
+      <a class="tab" href="/servers.html">
+        🤖 שרתי דיסקורד
       </a>
 
-      <a href="/events">
-        הוסיפו שרת
+      <a class="tab" href="/">
+        ✅ הוסיפו שרת
       </a>
 
     </nav>
@@ -46,14 +47,21 @@
   </div>
 
 
-<div dir="rtl">
+<div id="serv-list" dir="rtl">
   <table>
     <tr>
       <th>משחק:</th>
       <th>שרת:</th>
-      <th>אייפי</th>
-      <th>סטטוס</th>
-      <th>שחקנים</th>
+      <th>אייפי:</th>
+      <th>סטטוס:</th>
+      <th>שחקנים:</th>
+    </tr>
+    <tr>
+      <td>מיינקראפט</td>
+      <td>שרת SMP</td>
+      <td>mc.hyperfuze.com:25565</td>
+      <td>עובד</td>
+      <td>0/20</td>
     </tr>
   </table>
 </div>
