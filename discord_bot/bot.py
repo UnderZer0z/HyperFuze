@@ -21,8 +21,8 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    if message.content.startswith('!add server'):
-        await message.channel.send('hi there!')
+    if message.content.startswith('זונה'):
+        await message.channel.send('אמא שלך זונה!')
 
 
 
