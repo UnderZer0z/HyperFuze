@@ -1,6 +1,12 @@
-import requests
+from asyncio.tasks import wait
 from bs4 import BeautifulSoup
+import requests
+import json
+import time
 
+
+
+# gatting gametracker
 
 ip = '51.178.91.185:41413'
 ip1 = '54.38.154.47:2302'
@@ -19,15 +25,50 @@ def get_serv_stat(ip):
     print("number of players: " + players_num)
     print("max number of players: " + players_max)
     # print_page(soup)
+    
 
 
 
-def print_page(soup):
-    with open('page.html','w') as f:
-        f.write(str(soup))
+
+
+def load_json():
+    with open('./servers.json', 'r') as f:
+        server_list = json.load(f)
+        f.close()
+        return server_list
+
+
+def save_json(data):
+    ts = time.time()
+    server_list = load_json()
+    scan_new = get_serv_stat(data.ip)
+
+    server_scan = {
+        "Name":data.name,
+        "IP":data.ip,
+        "description": data.description,
+        "gameMode": data.gamemode,
+        "maxPlayer": scan_new.players_max,
+        "playerNum":scan_new.players_num,
+        "lastScanTimestamp": ts ,
+        "addedBy":data.user,
+        "addedTime": ts
+    }
+
+
+    with open('./servers.json', 'w') as f:
+        f.write()
         f.close()
 
 
 
-if __name__ == '__main__':
-    get_serv_stat(ip1)
+
+
+newdata = load_json()
+print(newdata['Minecarft'][0]['Name'])
+
+
+
+
+# if __name__ == '__main__':
+    # get_serv_stat(ip1)

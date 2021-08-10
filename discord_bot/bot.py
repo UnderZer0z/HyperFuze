@@ -20,9 +20,14 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    
-    if message.content.startswith('זונה'):
-        await message.channel.send('אמא שלך זונה!')
+
+    if message.channel.name == '🤖add-discord-server':
+        if message.content.startswith('!add'):
+            await message.channel.send('')
+    else:
+        return
+
+
 
 
 
