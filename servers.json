@@ -2,18 +2,17 @@
     "Minecarft":
         [
             {
-            "Name":"HyperSMP",
-            "IP":"mc.hyperfuze.com:25565",
-            "description":"free text",
-            "gameMode":"SMP",
-            "maxPlayer":20,
-            "playerNum":0,
-            "lastScanTimestamp":"",
-            "addedBy":"UnderZero#9556",
-            "addedTime":""
-        }
-    
-    ],
+                "Name":"HyperSMP",
+                "IP":"mc.hyperfuze.com:25565",
+                "description":"free text",
+                "maxPlayer":20,
+                "playerNum":0,
+                "lastScanTimestamp":"",
+                "addedBy":"UnderZero#9556",
+                "addedTime":""
+            }
+        ]
+    ,
     "Arma3":[],
     "Csgo":[],
     "Cs1.6":[],

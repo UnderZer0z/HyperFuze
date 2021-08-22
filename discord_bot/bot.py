@@ -1,36 +1,43 @@
 import discord
 import os
-import json
+from discord.ext import commands
 from dotenv import load_dotenv
-
+import scraper 
 
 # setting up .env vels
 load_dotenv(dotenv_path='discord_bot/.env')
 token = os.getenv('TOKEN')
 
 
-# bot script stats here
-client = discord.Client()
+client = commands.Bot(command_prefix = '!')
 
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}!'.format(client))
 
+
 @client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-
-    if message.channel.name == '🤖add-discord-server':
-        if message.content.startswith('!add'):
-            await message.channel.send('')
-    else:
-        return
-
-
-
+async def on_command_error(ctx, error):
+    if isinstance(error , commands.MissingRequiredArgument):
+        addserver = discord.Embed( title="Add a Server to list:", 
+        description="כדי להוסיף שרת לאתר הנה הוסף את הפרטים הבאים. \n !add Name Game Server-IP Port")
+        addserver.add_field( name='Name:',value='שם השרת', inline=False)
+            # addserver.add_field( name='Description:',value='תיאור לגבי השרת', inline=False) # removed for simplicity reasons.
+        addserver.add_field( name='Game:',value='לאיזה משחק השרת שלך?', inline=False)
+        addserver.add_field( name='Server-IP:',value='כתובת האייפי של שרת המשחק', inline=False)
+        addserver.add_field( name='Port:',value='כתובת הפורט של השרת', inline=False)
+        await ctx.send(embed=addserver)
 
 
-
+@client.command()
+async def add(ctx, name , game , ip , port ):
+    print(ctx.author)
+    await ctx.send("Server was add to HyperFuze DataBase! :)")
+    
+    
+    
 
 client.run(token)
+
+# scraper.add_sevrer()
+

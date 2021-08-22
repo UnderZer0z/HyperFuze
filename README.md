@@ -1,4 +1,4 @@
-# HyperFuze Project
+# **HyperFuze Project**
 
 ![HyperFuze Logo](https://github.com/UnderZer0z/HyperFuze/blob/master/public/image/logo.png)
 
@@ -18,8 +18,8 @@ helping israeli server owners connect with israeli players!
 
 
 ## DOTO LIST:
-    -[] forntend-side 
-    -[] discord bot
-    -[] discord server
-    -[] raspberry pi
 
+<!-- Task List -->
+* [x] stat working on a pythonbot.
+* [x] front-end work
+* [ ] deploy
