@@ -1,71 +1,54 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from dotenv import load_dotenv
-import time
 import os
+import discord
+from discord.ext import commands
+from dotenv import load_dotenv
+import webScraper 
 
 
-
-# ==[loading the dotenv flie values]
+# setting up .env vels
 load_dotenv(dotenv_path='discord_bot/.env')
-upass = os.getenv('PASS')
-uname = os.getenv('NAME')
+token = os.getenv('TOKEN')
+
+# =========================================
+# =========================================
 
 
+client = commands.Bot(command_prefix = '!')
 
-# ==[stting up the chorme driver for selenium] 
-PATH = 'discord_bot\chromedriver.exe'
-driver = webdriver.Chrome(PATH)
+@client.event
+async def on_ready():
+    print('We have logged in as {0.user}!'.format(client))
 
-
-def login_in(uname, upass):
-    driver.get('http://www.gametracker.com/servers')
-    # adding the username
-    username = driver.find_element_by_name('username')
-    username.send_keys(uname)
-    # adding the user password
-    password = driver.find_element_by_name('password')
-    password.send_keys(upass)
-
-    loginbtn = driver.find_element_by_name('submit')
-    loginbtn.submit()
-
-    print('waiting for loading')
-    time.sleep(5)
+# =========================================
 
 
-# game,ip,port
-def addserver():
-    game = 'Minecraft' # test value's
-    ip = '127.0.0.1'
-    port = '25565
-    '
-    # select game type
-    option = driver.find_element_by_xpath('//select[@name="GMID"]/option[text()="'+ game +'"]')
-    option.click()
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error , commands.MissingRequiredArgument):
+        addserver = discord.Embed( title="Add a Server to list:", 
+        description="כדי להוסיף שרת לאתר הנה הוסף את הפרטים הבאים. \n !add Name Game Server-IP Port")
+        addserver.add_field( name='Name:',value='שם השרת', inline=False)
+            # addserver.add_field( name='Description:',value='תיאור לגבי השרת', inline=False) # removed for simplicity reasons.
+        addserver.add_field( name='Game:',value='לאיזה משחק השרת שלך?', inline=False)
+        addserver.add_field( name='Server-IP:',value='כתובת האייפי של שרת המשחק', inline=False)
+        addserver.add_field( name='Port:',value='כתובת הפורט של השרת', inline=False)
+        await ctx.send(embed=addserver)
+
+# =========================================
+
+
+@client.command()
+async def add(ctx, name , game , ip , port ):
+    print(name , game , ip , port)
+    webScraper.track_game(game,ip,port)
+    print(ctx.author)
+    await ctx.send("Server was add to HyperFuze DataBase! :)")
     
-    # adds the ip_address
-    ip_input = driver.find_element_by_id("ip_address")
-    ip_input.send_keys(ip)
+    
+# =========================================
+    
 
-
-    time.sleep(5)
-
-
-
-def logout():
-    logoutbtn = driver.find_element_by_xpath('//input[@alt="Log Out"]')
-    logoutbtn.click()
-    time.sleep(5)
+client.run(token)
 
 
 
-def main(uname, upass):
-    login_in(uname, upass)
-    addserver()
-    logout()
-    driver.quit()
-
-
-main(uname, upass)
