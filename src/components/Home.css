@@ -1,0 +1,17 @@
+.tab{
+    background: rgba(255, 255, 255, 0.774);
+    border-radius: 15px;
+    margin: 6%;
+    padding: 2%;
+    margin-top: 30px;
+}
+
+.tab h1{
+    text-align: center;
+}
+
+.tab h3{
+    text-align: center;
+    margin: 0;
+    color: rgb(78, 78, 78);
+}
