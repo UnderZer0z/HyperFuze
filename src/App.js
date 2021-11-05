@@ -1,13 +1,17 @@
 import './App.css';
-import Navbar from './Navbar';
-import Home from './components/home'
+import Navbar from './components/Navbar';
+import Home from './components/Home'
+import Games from './components/Games'
+
+
 
 function App() {
   return (
       
         <div>
           <Navbar/>
-          <Home />
+          {/* <Home /> */}
+          <Games />
         </div>
       
   );
