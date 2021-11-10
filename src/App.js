@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
-// import Home from './components/Home'
-import Games from './components/Games'
+import Home from './components/Home'
+// import Games from './components/Games'
 
 
 
@@ -10,8 +10,8 @@ function App() {
       
         <div>
           <Navbar/>
-          {/* <Home /> */}
-          <Games />
+          <Home />
+          {/* <Games /> */}
         </div>
       
   );
