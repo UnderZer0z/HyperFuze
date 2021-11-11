@@ -4,7 +4,8 @@ function Navbar() {
   return (
     <header>
         <h1>Hyper<b>Fuze</b></h1>
-        <nav>
+        <input type="checkbox" name="menu" id="menu" />
+        <nav className='desktop-nav' >
             <a className='reg' href="/reg">הירשם</a>
             <a href="/game">משחקים</a>
             <a href="/server">שרתים</a>

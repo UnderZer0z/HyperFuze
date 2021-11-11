@@ -2,7 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home'
 // import Games from './components/Games'
-
+import Footer from './components/Footer';
 
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
           <Navbar/>
           <Home />
           {/* <Games /> */}
+          <Footer />
         </div>
       
   );

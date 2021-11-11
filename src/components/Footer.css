@@ -1,0 +1,23 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.footer div {
+    background-color: #2D3234;
+    border-radius: 15px;
+}
+
+.footer h5{
+    color: white;
+    padding: 10px;
+    margin: 0px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white ;
+}
