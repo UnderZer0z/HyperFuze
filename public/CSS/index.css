@@ -20,15 +20,21 @@
 }
 
 
+main{
+  margin: auto;
+  max-width: 800px;
+  padding: 0 16px;
+}
+
 /* server list compnent */
 
-#serv-list {
+/* #serv-list {
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
     margin: 20px;
-}
+} */
 
 table{
     background: linear-gradient(
